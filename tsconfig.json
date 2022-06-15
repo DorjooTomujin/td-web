@@ -12,5 +12,13 @@
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true
-  }
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/test.ts",
+    "src/**/*.spec.ts",
+    "src/app/file-to-exclude.ts"
+  ]
 }

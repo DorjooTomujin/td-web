@@ -18,6 +18,8 @@ Node Modules setup:
 
 > yarn install
 
+Compodoc асаах 
+> pnpm compodoc -s
 
 # Framework дээр ажиллах
 
