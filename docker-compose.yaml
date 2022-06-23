@@ -1,8 +1,7 @@
-version: '1.29.2'
 services:
   nestjs-app:
     build:
       context: .
       dockerfile: 'Dockerfile'
     ports:
-      - '20:6969'
+      - '3000:3000'

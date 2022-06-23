@@ -170,8 +170,7 @@ DockerCompose () {
             read -p "  >>  Host Port(default 3000): " HPORT
             if [ -z $HPORT ]
             then
-            echo "version: '1.29.2'
-services:
+            echo "services:
   nestjs-app:
     build:
       context: .
@@ -183,8 +182,7 @@ services:
             BOOL=false
             sleep 1
             else 
-                echo "version: '1.29.2'
-services:
+                echo "services:
   nestjs-app:
     build:
       context: .
@@ -226,6 +224,7 @@ services:
 
 End () {
     echo "  >>  Done dockerizing"
+    echo "  >>  Type 'docker-compose up' to start container"
     sleep 1
 }
 

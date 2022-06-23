@@ -6,6 +6,6 @@ COPY pnpm-lock.yaml .
 RUN yarn
 COPY . . 
 RUN yarn build
-EXPOSE 6969
+EXPOSE 3000
 CMD [ "yarn", "start" ]
 
