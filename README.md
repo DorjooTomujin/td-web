@@ -19,7 +19,7 @@ Node Modules setup:
 > yarn install
 
 Compodoc асаах 
-Documenation folder үүсэх бөгөөд .gitignore дээрээ ignore хийх
+| Documenation folder үүсэх бөгөөд .gitignore дээрээ ignore хийх
 > pnpm compodoc -s
 
 # Framework дээр ажиллах
