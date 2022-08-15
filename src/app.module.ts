@@ -1,7 +1,10 @@
-import { CacheModule, Global, Module } from '@nestjs/common';
+import { CacheModule, Global, MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import configuration from './config/configuration';
+import { AuthModule } from './resource/auth/auth.module';
+import { UserModule } from './resource/user/user.module';
+import { CareerModule } from './resource/career/career.module';
 
 @Global()
 @Module({
@@ -17,14 +20,13 @@ import configuration from './config/configuration';
       load: [configuration],
       isGlobal: true,
     }),
-    MongooseModule.forRootAsync({
-      imports: [ConfigModule],
-      useFactory: async (configService: any) => ({
-        uri: configService.get('mongo_url'),
-      }),
-      inject: [ConfigService]
-    }),
+    AuthModule,
+    UserModule,
+    CareerModule
   ],
+  providers: [],
   exports: [CacheModule]
 })
-export class AppModule {}
+export class AppModule  {
+  
+}

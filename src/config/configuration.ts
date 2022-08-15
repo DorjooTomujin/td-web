@@ -1,7 +1,7 @@
-import { config } from 'dotenv';
+// import { config } from 'dotenv';
 import { readFileSync } from 'fs';
 
-config();
+// config();
 export default () => {
   return {
     security: {

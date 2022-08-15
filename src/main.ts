@@ -1,7 +1,11 @@
 import { ValidationPipe } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
 import { DocumentBuilder, SwaggerCustomOptions, SwaggerDocumentOptions, SwaggerModule } from "@nestjs/swagger";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 import { AppModule } from "./app.module";
+import * as admin from 'firebase-admin'
+
 
 async function bootstrap() {
   // RestAPI
@@ -40,7 +44,8 @@ async function bootstrap() {
         tagsSorter: 'alpha'
       },
       customSiteTitle: 'Swagger API',
-    }
+  }
+
 
 
   const document = SwaggerModule.createDocument(app, config, options);
@@ -51,3 +56,4 @@ async function bootstrap() {
   console.log("Listening "+port)
 }
 bootstrap();
+
